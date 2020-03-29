@@ -13,7 +13,9 @@ Required python3 and modules:
 # Gathered statistics
 - cams:
   - network statistics: ping min/avg/max, packets loss
-  - common cam statistics
-- server: common server statistics
+  - common cam statistics: state, cpu, ram, disconnect reason, 
+- server:
+  - common server statistics: cpu, memory (system), memory (app)
+  - network statistics: Rx, Tx
 
 *common statistics - as is from Unifi API (except secret information like passwords etc.) 
