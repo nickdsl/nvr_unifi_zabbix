@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>{{ data.zabbix_version }}</version>
+    <date>2020-03-28T15:40:41Z</date>
+    <screens>
+        <screen>
+            <name>{{ data.screen_name }}</name>
+            <hsize>{{ data.col_number }}</hsize>
+            <vsize>{{ data.row_number }}</vsize>
+            <screen_items>
+{% for item in data.screen_items %}
+                <screen_item>
+                    <resourcetype>0</resourcetype>
+                    <width>{{ item.graph.width }}</width>
+                    <height>{{ item.graph.height }}</height>
+                    <x>{{ item.pos.x }}</x>
+                    <y>{{ item.pos.y }}</y>
+                    <colspan>1</colspan>
+                    <rowspan>1</rowspan>
+                    <elements>0</elements>
+                    <valign>0</valign>
+                    <halign>0</halign>
+                    <style>0</style>
+                    <url/>
+                    <dynamic>0</dynamic>
+                    <sort_triggers>0</sort_triggers>
+                    <resource>
+                        <name>{{ item.graph.name }}</name>
+                        <host>{{ data.host_name }}</host>
+                    </resource>
+                    <max_columns>3</max_columns>
+                    <application/>
+                </screen_item>
+{% endfor %}
+            </screen_items>
+        </screen>
+    </screens>
+</zabbix_export>
+
